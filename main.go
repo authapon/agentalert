@@ -13,7 +13,7 @@ import (
 
 	mc "github.com/authapon/mcryptzero"
 	"github.com/miekg/dns"
-	pp "github.com/sparrc/go-ping"
+	pp "github.com/go-ping/ping"
 )
 
 type (
