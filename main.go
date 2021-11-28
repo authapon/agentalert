@@ -12,8 +12,8 @@ import (
 	ldapserv "github.com/mavricknz/ldap"
 
 	mc "github.com/authapon/mcryptzero"
-	"github.com/miekg/dns"
 	pp "github.com/go-ping/ping"
+	"github.com/miekg/dns"
 )
 
 type (
@@ -156,6 +156,7 @@ func agentRUN(h int) {
 }
 
 func main() {
+	configProcess()
 	for i := range hosts {
 		go agentRUN(i)
 	}

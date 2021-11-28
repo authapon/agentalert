@@ -1,0 +1,29 @@
+bot: "127.0.0.1:9055"
+interval: 30
+secret: "Secret text that share with agentalert"
+#agent: "agent1"
+ping:
+  - name: "Server1"
+    access: "10.10.10.10"
+  - name: "Server2"
+    access: "10.10.10.11"
+web:
+  - name: "Web1"
+    access: "https://web1.com"
+  - name: "Web2"
+    access: "http://web2.org"
+mysql:
+  - name: "MySQL Serv1"
+    access: "user1:password@tcp(10.10.10.10:3306)/db"
+  - name: "MySQL Serv2"
+    access: "user2:password@tcp(10.10.10.11:3306)/db"
+ldap:
+  - name: "LDAP1"
+    access: "10.10.10.10"
+  - name: "LDAP2"
+    access: "10.10.10.11"
+dns:
+  - name: "DNS1"
+    access: "10.10.10.10"
+  - name: "DNS2"
+    access: "10.10.10.11"

@@ -1,5 +1,5 @@
 [Unit]
-Description=Worktime Service
+Description=Agent Alert Service
 After=syslog.target
 After=network.target
 
@@ -8,7 +8,7 @@ Type=simple
 User=root
 Group=root
 WorkingDirectory=/root
-ExecStart=/usr/bin/agentalert
+ExecStart=/usr/local/bin/agentalert /etc/agentalert.yaml
 Restart=always
 Environment=USER=root HOME=/root
 
