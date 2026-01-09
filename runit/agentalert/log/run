@@ -1,0 +1,4 @@
+#!/bin/sh
+# /etc/sv/agentalert/log/run
+
+exec svlogd -tt /var/log/agentalert

@@ -1,0 +1,23 @@
+#!/bin/sh
+# /etc/sv/agentalert/run
+
+export USER=root
+export HOME=/root
+
+# 1. รอ dhcpcd service ทำงาน
+while true; do
+    if sv status dhcpcd | grep -q "^run:"; then
+        break
+    fi
+    echo "waiting for dhcpcd service..."
+    sleep 1
+done
+
+# 2. รอจนได้ IP จาก DHCP จริงๆ
+while ! ip -4 addr show scope global | grep -q inet; do
+    echo "waiting for IP address..."
+    sleep 1
+done
+
+cd /root
+exec chpst -u root:root /usr/local/bin/agentalert /etc/agentalert.yaml
